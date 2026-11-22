@@ -12,7 +12,8 @@ interface ProjectCardProps {
 const ProjectCard: FC<ProjectCardProps> = ({project, demoLabel = 'Voir la démo'}) => {
     return (
         <article className="portfolio-card h-100 d-flex flex-column">
-            <ImagePlaceholder image={project.image} alt={`Aperçu de ${project.title}`} />
+            {/* Pas d'encadré vide quand le projet n'a pas encore de capture. */}
+            {project.image && <ImagePlaceholder image={project.image} alt={`Aperçu de ${project.title}`} />}
             <div className="p-3 d-flex flex-column flex-grow-1 text-start">
                 <h2 className="portfolio-card__title">{project.title}</h2>
                 {project.context && <p className="portfolio-card__context">{project.context}</p>}

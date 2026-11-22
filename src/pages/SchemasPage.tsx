@@ -25,7 +25,7 @@ const SchemasPage: FC = () => {
                     <div key={schema.title} className="col-12 col-md-6 col-lg-4">
                         <button className="portfolio-card schema-card h-100" onClick={() => setSelected(schema)}>
                             {schema.image
-                                ? <img className="card-media schema-thumb" src={schema.image} alt={`Aperçu : ${schema.title}`} loading="lazy" />
+                                ? <img className="card-media schema-thumb" src={schema.image} alt={`Aperçu : ${schema.title}`} />
                                 : <ImagePlaceholder alt={schema.title} label="Schéma à venir" />}
                             <div className="p-3 text-start">
                                 <ul className="tech-list mb-2"><li>{schema.type}</li></ul>

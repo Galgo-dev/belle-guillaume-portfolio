@@ -26,7 +26,7 @@ const GamesPage: FC = () => {
                 {game.levels.map(level => (
                     <div key={level.name} className="col-12 col-md-6">
                         <article className="portfolio-card h-100 text-start">
-                            <img className="card-media game-shot" src={level.image} alt={`Capture du niveau ${level.name}`} loading="lazy" />
+                            <img className="card-media game-shot" src={level.image} alt={`Capture du niveau ${level.name}`} />
                             <div className="p-3">
                                 <ul className="tech-list mb-2">
                                     <li>{level.kind}</li>
