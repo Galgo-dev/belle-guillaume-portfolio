@@ -1,0 +1,56 @@
+/* Hauteur fixe : quand les mots passent en position absolue pour tomber, la boîte ne se referme plus sur elle-même. */
+.falling-text-container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: clamp(220px, 38vh, 320px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    cursor: grab;
+    text-align: center;
+    border: 2px dashed var(--border);
+    border-radius: 12px;
+    background-color: color-mix(in srgb, var(--bg) 55%, transparent);
+    transition: border-color .3s;
+}
+
+.falling-text-container:hover {
+    border-color: var(--accent);
+}
+
+.falling-text-container:active {
+    cursor: grabbing;
+}
+
+.falling-text-target {
+    display: inline-block;
+    max-width: 46rem;
+}
+
+.word {
+    display: inline-block;
+    color: var(--text);
+    margin: 2px 3px;
+    user-select: none;
+    white-space: nowrap;
+}
+
+/* Mots clés présentés comme des étiquettes aux couleurs du thème. */
+.highlighted {
+    padding: 0 .45em;
+    color: var(--highlight);
+    font-weight: bold;
+    border: 1px solid var(--highlight);
+    border-radius: 6px;
+    background-color: color-mix(in srgb, var(--highlight) 14%, var(--surface));
+}
+
+.falling-text-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    pointer-events: none;
+}

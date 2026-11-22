@@ -1,0 +1,56 @@
+/* Le calque interne est un grand carré invisible : on le coupe au cadre pour qu'il ne recouvre pas
+   les éléments voisins (clics bloqués) et ne rallonge pas la page. */
+.orbit-container {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.orbit-scaling-container {
+    width: 100%;
+    height: 50%;
+    position: relative;
+}
+
+.orbit-scaling-container--responsive {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform-origin: center center;
+}
+
+.orbit-rotation-wrapper {
+    width: 100%;
+    height: 100%;
+    transform-origin: center center;
+    position: relative;
+}
+
+.orbit-path-svg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.orbit-item {
+    position: absolute;
+    will-change: transform;
+    user-select: none;
+}
+
+.orbit-center-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.orbit-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}

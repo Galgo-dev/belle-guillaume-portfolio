@@ -1,0 +1,535 @@
+/* Les couleurs viennent du thème actif (src/themes/themes.ts), injectées en variables CSS sur <html>. */
+:root {
+    --glow: 0 0 5px var(--accent), 0 0 25px var(--accent), 0 0 50px var(--accent), 0 0 200px var(--accent);
+    --pixel-font: 'Press Start 2P', monospace;
+}
+
+.neon-btn {
+    position: relative;
+    z-index: 1;
+    border: none;
+    width: auto;
+    height: auto;
+    padding: .5rem 1.5rem;
+    font-size: clamp(1.1rem, 2.5vw, 1.75rem);
+    transition: .4s ease-in;
+    border-radius: 30px;
+    display: inline-block;
+    background-color: var(--secondary);
+    color: var(--accent-contrast);
+    text-decoration: none;
+}
+
+h1 {
+    color: var(--accent);
+}
+
+.section-title {
+    color: var(--text);
+    font-size: clamp(1.4rem, 3vw, 2rem);
+}
+
+.neon-btn:hover,
+.neon-btn:focus-visible {
+    background: var(--accent);
+    color: var(--accent-contrast);
+    box-shadow: var(--glow);
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+.cvPP{
+    width: clamp(120px, 20vw, 240px);
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+.darkveil_box{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.presentation-box{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.Presentation-content{
+    position: relative;
+    z-index: 2;
+}
+
+.site-icon {
+    color: var(--icon);
+    transition: filter .3s ease-in, transform .3s ease-in;
+}
+
+/* Lueur au survol : drop-shadow suit le dessin de l'icône (box-shadow ferait un carré autour). */
+a:hover .site-icon,
+a:focus-visible .site-icon {
+    filter: drop-shadow(0 0 3px var(--accent)) drop-shadow(0 0 10px var(--accent)) drop-shadow(0 0 22px var(--accent));
+    transform: translateY(-2px);
+}
+
+.cv-image {
+    display: block;
+    width: min(900px, 100%);
+    height: auto;
+    margin: 0 auto;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: 0 8px 30px color-mix(in srgb, var(--bg) 60%, transparent);
+}
+
+.soft-skills-box {
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background-color: var(--surface);
+}
+
+.soft-skills-hint {
+    color: var(--text-muted);
+    font-size: .9rem;
+}
+
+.soft-skills-reset {
+    display: inline-block;
+    margin-top: 1rem;
+    background: transparent;
+    cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    padding: 1em 0;
+    background-color: color-mix(in srgb, var(--bg) 85%, transparent);
+}
+
+.site-header .pill-nav-container {
+    position: relative;
+    top: 0;
+}
+
+.page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.page-intro {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+.portfolio-card {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: border-color .3s, box-shadow .3s;
+}
+
+.portfolio-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 15px color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+.portfolio-card__title {
+    color: var(--accent);
+    font-size: 1.25rem;
+}
+
+/* ---------- Page Jeux ---------- */
+
+.game-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+}
+
+.game-hero__cover {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+    image-rendering: pixelated;
+}
+
+@media (min-width: 768px) {
+    .game-hero {
+        grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+        align-items: center;
+    }
+}
+
+.game-shot {
+    aspect-ratio: 4 / 3;
+}
+
+.tech-list .tech-list__muted {
+    border-color: var(--text-muted);
+    color: var(--text-muted);
+}
+
+.game-todo {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding-left: 1.25rem;
+    color: var(--text-muted);
+}
+
+.game-todo li {
+    margin-bottom: .4rem;
+}
+
+.portfolio-card__context {
+    color: var(--text-muted);
+    font-size: .85rem;
+    margin-bottom: .5rem;
+}
+
+.card-media {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+}
+
+.card-media--empty {
+    --stripe-a: color-mix(in srgb, var(--surface) 92%, var(--text));
+    --stripe-b: color-mix(in srgb, var(--surface) 86%, var(--text));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: color-mix(in srgb, var(--text-muted) 55%, var(--surface));
+    background: repeating-linear-gradient(45deg, var(--stripe-a), var(--stripe-a) 10px, var(--stripe-b) 10px, var(--stripe-b) 20px);
+}
+
+.tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tech-list li {
+    font-size: .8rem;
+    padding: .15rem .6rem;
+    border-radius: 999px;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+}
+
+.card-link-btn {
+    padding: .35rem .9rem;
+    border-radius: 999px;
+    border: 1px solid var(--text);
+    color: var(--text);
+    text-decoration: none;
+    font-size: .9rem;
+    transition: background-color .3s, color .3s;
+}
+
+.card-link-btn:hover {
+    background-color: var(--text);
+    color: var(--surface);
+}
+
+.card-link-btn--primary {
+    border-color: var(--accent);
+    background-color: var(--accent);
+    color: var(--accent-contrast);
+}
+
+.schema-card {
+    cursor: zoom-in;
+    width: 100%;
+    padding: 0;
+    color: inherit;
+    font: inherit;
+}
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background-color: color-mix(in srgb, var(--bg) 90%, transparent);
+    cursor: zoom-out;
+}
+
+.lightbox__content {
+    width: min(1100px, 100%);
+    max-height: 100%;
+    overflow-y: auto;
+}
+
+/* Les schémas sont dessinés sur fond blanc : on les montre en entier, sans les rogner. */
+.schema-thumb {
+    object-fit: contain;
+    background-color: #fff;
+    padding: .5rem;
+}
+
+.lightbox__image {
+    display: block;
+    width: 100%;
+    max-height: 78vh;
+    object-fit: contain;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-list li {
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.contact-list span {
+    color: var(--text-muted);
+    font-size: .85rem;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+}
+
+.contact-list a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+/* ---------- Bouton de test des styles ---------- */
+
+.theme-switcher {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 300;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: .5rem;
+}
+
+.theme-switcher__toggle,
+.theme-switcher__option {
+    border: 1px solid var(--accent);
+    background-color: var(--surface);
+    color: var(--text);
+    border-radius: 999px;
+    padding: .45rem .9rem;
+    font-size: .85rem;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.theme-switcher__toggle {
+    box-shadow: 0 0 12px color-mix(in srgb, var(--accent) 40%, transparent);
+}
+
+.theme-switcher__menu {
+    list-style: none;
+    margin: 0;
+    padding: .5rem;
+    display: flex;
+    flex-direction: column;
+    gap: .35rem;
+    background-color: color-mix(in srgb, var(--bg) 92%, transparent);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+}
+
+.theme-switcher__option {
+    width: 100%;
+    text-align: left;
+    border-color: var(--border);
+}
+
+.theme-switcher__option:hover,
+.theme-switcher__option.is-active {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* ---------- Thèmes saisonniers : police pixel pour les titres et le menu ---------- */
+
+html:not([data-theme="classic"]) h1,
+html:not([data-theme="classic"]) h2,
+html:not([data-theme="classic"]) .pill,
+html:not([data-theme="classic"]) .mobile-menu-link,
+html:not([data-theme="classic"]) .magic-bento-card__label,
+html:not([data-theme="classic"]) .theme-switcher__toggle {
+    font-family: var(--pixel-font);
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+html:not([data-theme="classic"]) h1 {
+    font-size: clamp(1.1rem, 3.2vw, 2rem);
+    text-shadow: 3px 3px 0 color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+html:not([data-theme="classic"]) h2 {
+    font-size: clamp(.8rem, 2vw, 1.15rem);
+}
+
+html:not([data-theme="classic"]) .pill {
+    font-size: 10px;
+    line-height: 0;
+}
+
+html:not([data-theme="classic"]) .mobile-menu-link {
+    font-size: 12px;
+}
+
+html:not([data-theme="classic"]) .magic-bento-card__label {
+    font-size: 10px;
+}
+
+/* ---------- Haut de l'accueil avec scène pixel art ---------- */
+
+/* La hauteur suit la largeur (format 2:1) : seul le bas sombre de la pièce est un peu rogné. */
+.hero--scene {
+    height: max(360px, min(50vw, 88vh));
+    display: flex;
+    align-items: flex-start;
+}
+
+/* Carte compacte en haut à gauche, sur le feuillage sombre : le paysage, le rebord et le personnage restent visibles. */
+.hero--scene .Presentation-content {
+    width: min(420px, 34%);
+    margin: clamp(1rem, 3vw, 2.5rem) 0 0 clamp(1rem, 3vw, 2.5rem);
+    padding: 1.1rem 1.25rem !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    gap: 1rem !important;
+    text-align: left;
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    background-color: color-mix(in srgb, var(--bg) 72%, transparent);
+    backdrop-filter: blur(3px);
+    box-shadow: 4px 4px 0 color-mix(in srgb, var(--bg) 70%, transparent);
+}
+
+.hero--scene .Presentation-content > div {
+    align-items: flex-start !important;
+    order: 2;
+}
+
+html .hero--scene h1 {
+    font-size: clamp(.75rem, 1.3vw, 1.05rem);
+    margin-bottom: .6rem;
+}
+
+.hero--scene p {
+    margin-bottom: .35rem;
+    font-size: .85rem;
+    line-height: 1.35;
+}
+
+.hero--scene .cvPP {
+    order: 1;
+    flex-shrink: 0;
+    width: clamp(56px, 6vw, 80px);
+    border: 2px solid var(--accent);
+    image-rendering: auto;
+}
+
+.hero-scene {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 60% 25%;
+    image-rendering: pixelated;
+}
+
+/* Position de la carte selon l'image de la saison, pour ne cacher ni la fenêtre ni le personnage.
+   Hiver : en haut à gauche (position par défaut). */
+@media (min-width: 768px) {
+    /* Printemps, été, automne : la carte descend en bas, sur le sol et les objets secondaires. */
+    html[data-theme="spring"] .hero--scene,
+    html[data-theme="summer"] .hero--scene,
+    html[data-theme="autumn"] .hero--scene {
+        align-items: flex-end;
+    }
+
+    html[data-theme="spring"] .hero--scene .Presentation-content,
+    html[data-theme="summer"] .hero--scene .Presentation-content,
+    html[data-theme="autumn"] .hero--scene .Presentation-content {
+        margin-top: 0;
+        margin-bottom: clamp(1rem, 3vw, 2.5rem);
+    }
+
+    /* Printemps : à droite, car la gauche est occupée par les plantes et la fenêtre. */
+    html[data-theme="spring"] .hero--scene {
+        justify-content: flex-end;
+    }
+
+    html[data-theme="spring"] .hero--scene .Presentation-content {
+        margin-left: 0;
+        margin-right: clamp(1rem, 3vw, 2.5rem);
+    }
+}
+
+@media (max-width: 767px) {
+    .hero--scene {
+        height: auto;
+        flex-direction: column;
+        align-items: stretch;
+        padding-top: 50vw;
+    }
+
+    .hero--scene .hero-scene {
+        height: 50vw;
+        bottom: auto;
+    }
+
+    .hero--scene .Presentation-content {
+        width: auto;
+        margin: 1rem;
+    }
+}
+
+.season-particles {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    image-rendering: pixelated;
+}
