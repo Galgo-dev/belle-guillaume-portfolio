@@ -37,5 +37,6 @@ export const webProjects: Project[] = [
         description: "Le site que vous consultez : un style par saison, des scènes en pixel art, une navigation adaptée au mobile "
             + "et un contenu séparé du code pour être mis à jour facilement.",
         technologies: ['React', 'TypeScript', 'Vite', 'Vitest'],
+        repoUrl: 'https://github.com/Galgo-dev/belle-guillaume-portfolio',
     },
 ];
