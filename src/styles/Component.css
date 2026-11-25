@@ -295,6 +295,23 @@ a:focus-visible .site-icon {
     padding: .5rem;
 }
 
+.schema-group + .schema-group {
+    margin-top: 3.5rem;
+}
+
+.schema-group .page-intro {
+    margin-bottom: 1.5rem;
+}
+
+/* Les titres de carte gardent la police pixel même quand ce sont des h3. */
+html:not([data-theme="classic"]) h3.portfolio-card__title {
+    font-family: var(--pixel-font);
+    font-weight: 400;
+    font-size: clamp(.8rem, 2vw, 1.05rem);
+    line-height: 1.5;
+    font-variant-ligatures: none;
+}
+
 .lightbox__image {
     display: block;
     width: 100%;

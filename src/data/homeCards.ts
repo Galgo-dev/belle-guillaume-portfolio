@@ -3,7 +3,7 @@ import type {BentoCardProps} from "../components/effects/MagicBento";
 export const homeCards: BentoCardProps[] = [
     {
         title: 'Schémas',
-        description: 'Entité-association, relationnel',
+        description: 'Cas d’utilisation, flux, bases de données',
         label: 'Analyse',
         link: '/schemas'
     },
