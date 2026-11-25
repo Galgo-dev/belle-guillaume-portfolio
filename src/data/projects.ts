@@ -11,6 +11,14 @@ export interface Project {
 
 export const webProjects: Project[] = [
     {
+        title: 'CERISE V2 — Travail de fin d’études',
+        context: 'Stage de 14 semaines à l’ARSIA · 2025',
+        description: "Refonte des interfaces de commande de matériel du portail CERISE, utilisé par les éleveurs wallons pour le recensement de leurs animaux. "
+            + "J'ai analysé la version existante (cas d'utilisation, diagrammes de flux, bases de données), puis développé les nouvelles interfaces en React "
+            + "et les routes de l'API en Python, avec des tests automatisés.",
+        technologies: ['React', 'TypeScript', 'Python', 'SQLAlchemy', 'Marshmallow', 'Robot Framework', 'Pytest'],
+    },
+    {
         title: 'Infradapt — API',
         context: 'Projet en équipe de 3 · 2023-2024',
         description: "API REST d'une application qui recense les lieux et leurs aménagements pour les personnes en situation de handicap. "
